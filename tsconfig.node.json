@@ -1,0 +1,16 @@
+// 此ts配置文件不是用来编译项目(src)的，而是用来编译vite配置文件的(vite.config.ts)，
+// 项目(src)的ts编译配置应放在tsconfig.json，vite配置文件的ts编译配置放在tsconfig.node.json
+// 彼此独立，互不干扰
+{
+  "compilerOptions": {
+    // 标识此配置文件为新的项目
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    // 导入cjs模块时，模块声明使用export=xx，导入使用import xx from 'xx'必须打开此开关
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "vite.config.ts"
+  ]
+}
